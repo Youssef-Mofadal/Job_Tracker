@@ -1,0 +1,89 @@
+[
+  {
+    "id": "1",
+    "companyName": "TechStart Inc",
+    "position": "Frontend Engineer",
+    "type": "job",
+    "status": "applied",
+    "dateApplied": "2024-01-15T10:00:00.000Z",
+    "location": "Remote",
+    "workMode": "remote",
+    "priority": "high",
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "updatedAt": "2024-01-15T10:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "companyName": "Google",
+    "position": "Software Engineering Intern",
+    "type": "internship",
+    "status": "screening",
+    "dateApplied": "2024-01-20T14:30:00.000Z",
+    "location": "Mountain View, CA",
+    "workMode": "hybrid",
+    "priority": "high",
+    "createdAt": "2024-01-20T14:30:00.000Z",
+    "updatedAt": "2024-01-21T09:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "companyName": "Amazon",
+    "position": "SDE I",
+    "type": "job",
+    "status": "rejected",
+    "dateApplied": "2023-12-10T09:15:00.000Z",
+    "location": "Seattle, WA",
+    "workMode": "on-site",
+    "priority": "medium",
+    "createdAt": "2023-12-10T09:15:00.000Z",
+    "updatedAt": "2023-12-25T11:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "companyName": "StartupXYZ",
+    "position": "React Developer",
+    "type": "part-time",
+    "status": "interview",
+    "dateApplied": "2024-02-01T16:45:00.000Z",
+    "location": "New York, NY",
+    "workMode": "remote",
+    "priority": "medium",
+    "createdAt": "2024-02-01T16:45:00.000Z",
+    "updatedAt": "2024-02-05T10:20:00.000Z"
+  },
+  {
+    "companyName": "Intelcia",
+    "position": "Web Dev",
+    "status": "interview",
+    "type": "job",
+    "location": "Casa Nearshore",
+    "salary": "8k",
+    "id": "6dfa5ab4-9324-46e4-b01d-02e75468ebfd",
+    "createdAt": "2026-01-02T10:29:57.165Z",
+    "updatedAt": "2026-01-02T10:29:57.165Z"
+  },
+  {
+    "companyName": "Intelcia",
+    "position": "Web Dev",
+    "status": "screening",
+    "type": "job",
+    "location": "Casa Nearshore",
+    "salary": "8k",
+    "dateApplied": "2025-12-28T00:00:00.000Z",
+    "id": "cfe0d6ca-3c59-48cd-914a-8322c8d8256a",
+    "createdAt": "2026-01-02T10:36:38.342Z",
+    "updatedAt": "2026-01-02T10:36:38.342Z"
+  },
+  {
+    "companyName": "Google",
+    "position": "QA",
+    "status": "applied",
+    "type": "job",
+    "location": "remote",
+    "salary": "8000DH",
+    "dateApplied": "2025-12-29T00:00:00.000Z",
+    "id": "55c0ddc1-8e93-4bfe-9d35-5764154a2f90",
+    "createdAt": "2026-01-02T10:45:27.248Z",
+    "updatedAt": "2026-01-02T10:45:27.248Z"
+  }
+]
