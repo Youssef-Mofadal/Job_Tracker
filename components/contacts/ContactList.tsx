@@ -16,7 +16,12 @@ export function ContactList({ initialContacts }: ContactListProps) {
         const stored = localStorage.getItem('job_tracker_local_contacts')
         if (stored) {
             try {
-                const localContacts = JSON.parse(stored)
+                const localContacts = JSON.parse(stored, (key, value) => {
+                    if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T/.test(value)) {
+                        return new Date(value);
+                    }
+                    return value;
+                })
                 // Merge local contacts with server contacts (avoiding duplicates by ID)
                 const serverIds = new Set(initialContacts.map(c => c.id))
                 const uniqueLocal = localContacts.filter((c: Contact) => !serverIds.has(c.id))
