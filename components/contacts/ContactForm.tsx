@@ -56,6 +56,20 @@ export function ContactForm({ initialData }: ContactFormProps) {
                 }),
             })
 
+            const newContact = await res.json()
+
+            // Optimistic Client-Side Update for Demo Persistence
+            try {
+                const stored = localStorage.getItem('job_tracker_local_contacts')
+                const localContacts = stored ? JSON.parse(stored) : []
+                // If it's an update, remove the old one first
+                const filtered = localContacts.filter((c: Contact) => c.id !== newContact.id)
+                filtered.push(newContact)
+                localStorage.setItem('job_tracker_local_contacts', JSON.stringify(filtered))
+            } catch (e) {
+                console.error("Failed to save to local storage", e)
+            }
+
             if (!res.ok) throw new Error("Failed to save")
 
             router.push("/contacts")

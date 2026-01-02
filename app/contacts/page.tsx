@@ -2,7 +2,7 @@ import Link from "next/link"
 import { db } from "@/lib/db"
 import { Button } from "@/components/ui/button"
 import { Plus } from "lucide-react"
-import { ContactCard } from "@/components/contacts/ContactCard"
+import { ContactList } from "@/components/contacts/ContactList"
 
 export const dynamic = 'force-dynamic';
 
@@ -21,14 +21,7 @@ export default async function ContactsPage() {
             </div>
 
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {contacts.map((contact) => (
-                    <ContactCard key={contact.id} contact={contact} />
-                ))}
-                {contacts.length === 0 && (
-                    <div className="col-span-full text-center py-10 text-muted-foreground">
-                        No contacts found. Build your network!
-                    </div>
-                )}
+                <ContactList initialContacts={contacts} />
             </div>
         </div>
     )
