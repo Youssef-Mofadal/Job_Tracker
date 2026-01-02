@@ -21,9 +21,14 @@ export function ContactList({ initialContacts }: ContactListProps) {
                 const serverIds = new Set(initialContacts.map(c => c.id))
                 const uniqueLocal = localContacts.filter((c: Contact) => !serverIds.has(c.id))
 
-                if (uniqueLocal.length > 0) {
-                    setContacts(prev => [...prev, ...uniqueLocal])
-                }
+                // Deduplicate against both server props and current state to prevent double-adding
+                setContacts(current => {
+                    const existingIds = new Set(current.map(c => c.id))
+                    const reallyNew = uniqueLocal.filter((c: Contact) => !existingIds.has(c.id))
+
+                    if (reallyNew.length === 0) return current
+                    return [...current, ...reallyNew]
+                })
             } catch (e) {
                 console.error("Failed to parse local contacts", e)
             }
