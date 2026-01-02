@@ -25,7 +25,7 @@ interface CalendarViewProps {
 
 export function CalendarView({ applications }: CalendarViewProps) {
     const [currentMonth, setCurrentMonth] = useState(new Date())
-    const [selectedDate, setSelectedDate] = useState(new Date())
+
 
     const nextMonth = () => setCurrentMonth(addMonths(currentMonth, 1))
     const prevMonth = () => setCurrentMonth(subMonths(currentMonth, 1))
@@ -36,10 +36,7 @@ export function CalendarView({ applications }: CalendarViewProps) {
     const endDate = endOfWeek(monthEnd)
 
     const dateFormat = "d"
-    const rows = []
-    const days = []
-    const day = startDate
-    const formattedDate = ""
+
 
     const calendarDays = eachDayOfInterval({
         start: startDate,
@@ -59,7 +56,7 @@ export function CalendarView({ applications }: CalendarViewProps) {
             type: 'application'
         });
         return acc;
-    }, {} as Record<string, any[]>)
+    }, {} as Record<string, { id: string, title: string, type: string }[]>)
 
     return (
         <div className="bg-card rounded-md border shadow-sm p-4">
@@ -88,7 +85,7 @@ export function CalendarView({ applications }: CalendarViewProps) {
             </div>
 
             <div className="grid grid-cols-7 gap-px bg-muted/20 border rounded-md overflow-hidden">
-                {calendarDays.map((day, idx) => {
+                {calendarDays.map((day) => {
                     const dateStr = day.toDateString();
                     const dayEvents = eventsByDate[dateStr] || [];
 
@@ -105,7 +102,7 @@ export function CalendarView({ applications }: CalendarViewProps) {
                                 {format(day, dateFormat)}
                             </div>
                             <div className="space-y-1">
-                                {dayEvents.map((event: any) => (
+                                {dayEvents.map((event) => (
                                     <Badge
                                         key={event.id}
                                         variant="secondary"

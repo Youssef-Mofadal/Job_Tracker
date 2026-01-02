@@ -1,7 +1,7 @@
 import { Contact } from "@/types/contact"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, Building, User } from "lucide-react"
+import { Mail, Phone, Building } from "lucide-react"
 
 interface ContactCardProps {
     contact: Contact
