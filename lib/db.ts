@@ -3,7 +3,11 @@ import path from 'path';
 import { Application } from '@/types/application';
 import { Contact } from '@/types/contact';
 
-const DATA_DIR = path.join(process.cwd(), 'data');
+import os from 'os';
+
+const DATA_DIR = process.env.NODE_ENV === 'production'
+    ? path.join(os.tmpdir(), 'job-tracker-data')
+    : path.join(process.cwd(), 'data');
 
 // In-memory cache to store data during runtime (for Vercel serverless where fs is readonly)
 // Ideally this would be a real database.
